@@ -1,0 +1,18 @@
+
+<p>
+	<%= link_to "Create" , new_demo_path%>
+</p>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+	</tr>
+	<%@demos.each do|demo|%>
+	<tr>
+		<td><%=demo.name%></td>
+		<td><%=demo.description%></td>
+		<td><%= link_to "Edit", edit_demo_path(demo)%></td>
+		<td><%= link_to "Show" , demo_path(demo)%></td>
+<%end%>
+	</tr>
+</table>

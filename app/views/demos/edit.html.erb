@@ -1,0 +1,22 @@
+<h1> "Edit" </h1>
+
+<%if @demo.errors.any?%>
+<h2> following are the errors </h2>
+<ul>
+<%@demo.errors.full_messages.each do |msg|%>
+<li> <%=msg%></li>
+<%end%>
+</ul>
+<%end%>
+<%= form_for @demo do |f| %>
+<p>
+<%= f.label :name%> <br>
+<%= f.text_field :name%>
+</p>
+<p>
+	<%= f.label :description%> <br>
+<%= f.text_area :description%>
+</p>
+
+<%= f.submit %>
+<% end %>
